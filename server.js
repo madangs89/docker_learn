@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const mongUrl = "mongodb://admin:qwerty@localhost:27017";
+const mongUrl = `mongodb://${process.env.MONGO_DB_USERNAME}:${process.env.MONGO_DB_PASSWORD}@mongo:27017`;
 
 const userSchema = new mongoose.Schema({
   name: String,
